@@ -12,9 +12,6 @@ def rescaleFrame(frame, scale = 0.5):
 frame_resize = rescaleFrame(img)
 
 
-
-
-
 cv.imshow('Cat', frame_resize)
 #cv.imshow('Video Resize', frame_resize)
 

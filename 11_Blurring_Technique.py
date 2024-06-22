@@ -18,6 +18,7 @@ cv.imshow('Median Blur', median)
 # Bilateral Blur
 bilateral = cv.bilateralFilter(img, 10, 35, 25)
 cv.imshow('Bilateral', bilateral)
+
 # Wait for a key event indefinitely or until 'd' key is pressed
 if 0xFF == ord('d'):
     cv.destroyAllWindows()

@@ -10,7 +10,7 @@ people = ['Canelo', 'Donnie', 'JetLi', 'Loma', 'Trump']
 face_regnizer = cv.face.LBPHFaceRecognizer_create()
 face_regnizer.read('face_trained.yml')
 
-img = cv.imread(r'/home/Jet/OpenCV/Face_test/TMP/T2.jpg')
+img = cv.imread(r'/home/Jet/OpenCV/Face_test/CNL/C0.jpg')
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Person', gray)

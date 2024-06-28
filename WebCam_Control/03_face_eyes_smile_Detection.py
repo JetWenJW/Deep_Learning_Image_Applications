@@ -5,7 +5,7 @@ face_cascade = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_frontalf
 smile_cascade = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_smile.xml")
 eye_cascade = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_eye.xml")
 
-def detect_features():
+def detect_features(frame):
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)    
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     for(x, y , w, h) in faces:
@@ -13,11 +13,11 @@ def detect_features():
         face = frame[y : y + h, x : x + w]
         gray_face = gray[y : y + h, x : x + w]
 
-        smiles = smile_cascade.detectMultiScale(gray_face, 2.5, minNeibors = 9)
+        smiles = smile_cascade.detectMultiScale(gray_face, 2.5, minNeighbors = 9)
         for(xp, yp, wp, hp) in smiles:
-            face = cv.rectangle(face, (xp, yp), (xp + wp, yp + hp), color = (0, 0, 255), thickness = 5)
+            face = cv.rectangle(face, (xp, yp), (xp + wp, yp + hp), color = (0, 255, 0), thickness = 5)
         
-        eyes = eye_cascade.detectMultiScale(gray_face, 2.5, minNeibors = 7)
+        eyes = eye_cascade.detectMultiScale(gray_face, 2.5, minNeighbors = 7)
         for(xp, yp, wp, hp) in eyes:
             face = cv.rectangle(face, (xp, yp), (xp + wp, yp + hp), color = (255, 0, 0), thickness = 5)
     

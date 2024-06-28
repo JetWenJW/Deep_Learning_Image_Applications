@@ -11,7 +11,7 @@ gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 gray = cv.GaussianBlur(gray, (5, 5), 0)
 
 # Enhance the image using Adaptive Histogram Equalization
-clahe = cv.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+clahe = cv.createCLAHE(clipLimit = 2.0, tileGridSize = (8, 8))
 gray = clahe.apply(gray)
 
 # Adjusted SHI-TOMASI method parameters
@@ -20,13 +20,13 @@ qualityLevel = 0.01  # Decrease the quality level
 minDistance = 5  # Decrease the minimum distance
 
 # Detect corners
-corners = cv.goodFeaturesToTrack(gray, maxCorners=maxCorners, qualityLevel=qualityLevel, minDistance=minDistance)
+corners = cv.goodFeaturesToTrack(gray, maxCorners = maxCorners, qualityLevel = qualityLevel, minDistance = minDistance)
 corners = np.int0(corners)
 
 # Draw detected corners on the original image
 for c in corners:
     x, y = c.ravel()
-    img = cv.circle(img, center=(int(x), int(y)), radius=5, color=(255, 0, 0), thickness=-1)
+    img = cv.circle(img, center = (int(x), int(y)), radius = 5, color = (255, 0, 0), thickness = -1)
 
 # Display the image
 cv.imshow("Shape", img)

@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 
 # 讀取圖像
-img = cv.imread('../Images/group.jpg')
+img = cv.imread('../Images/trip_2.jpg')
 # 顯示原圖像
 cv.imshow('Trump', img)
 

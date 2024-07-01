@@ -3,7 +3,7 @@ import numpy as np
 
 # img = cv.imread('Images/paris.jpg')
 # cv.imshow('paris', img)   #cv.imshow(name, params)
-img = cv.imread('Images/cat.jpg')
+img = cv.imread('../Images/trip_1.jpg')
 cv.imshow('Cat', img)
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)

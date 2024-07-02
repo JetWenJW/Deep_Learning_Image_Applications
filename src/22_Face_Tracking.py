@@ -4,10 +4,6 @@ from matplotlib.patches import Rectangle, Circle
 import face_recognition
 from PIL import Image, ImageDraw
 
-
-
-
-
 # 載入圖檔
 image_file = "/home/Jet/OpenCV/Images/two.jpg"
 image = plt.imread(image_file)
@@ -55,7 +51,7 @@ for face_landmarks in face_landmarks_list:
 
     # 繪製特徵點
     for facial_feature in face_landmarks.keys():
-        d.line(face_landmarks[facial_feature], width=5, fill='green')
+        d.line(face_landmarks[facial_feature], width = 5, fill = 'green')
     
 # 顯示圖像
 plt.imshow(pil_image)
